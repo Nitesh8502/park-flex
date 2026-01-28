@@ -29,7 +29,7 @@ export const AccountCard = () => {
   // Used to fetch the wallet's balance
   useEffect(() => {
     axios
-      .get("https://park-flex-api.onrender.com/api/wallet/get-balance", {
+      .get("http://localhost:3001/api/wallet/get-balance", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -95,7 +95,7 @@ export const AccountCard = () => {
       }
 
       const response = await axios.post(
-        "https://park-flex-api.onrender.com/api/wallet/add-money",
+        "http://localhost:3001/api/wallet/add-money",
         {
           amount: parseFloat(amount),
           paymentMethodId: paymentMethod.id,
@@ -131,7 +131,7 @@ export const AccountCard = () => {
     if (isValidNumber(amount)) {
       try {
         const response = await axios.post(
-          "https://park-flex-api.onrender.com/api/wallet/withdraw-money",
+          "http://localhost:3001/api/wallet/withdraw-money",
           {
             amount: parseFloat(amount),
           },
@@ -183,7 +183,7 @@ export const AccountCard = () => {
               </div>
             ) : (
               <p className='text-lg mt-1 text-center text-darkblue ml-2 font-bold'>
-                ${walletBalance}
+                Rs. {walletBalance}
               </p>
             )}
           </div>
@@ -204,19 +204,19 @@ export const AccountCard = () => {
               onClick={() => handleAddMoneyButton("50.00")}
               className='bg-white border border-header text-header px-4 py-2 rounded-md hover:bg-header hover:text-white transition-transform transform hover:scale-105 mb-2'
             >
-              + $50.00
+              + Rs.50.00
             </button>
             <button
               onClick={() => handleAddMoneyButton("100.00")}
               className='bg-white border border-header text-header px-4 py-2 rounded-md hover:bg-header hover:text-white transition-transform transform hover:scale-105 mb-2'
             >
-              + $100.00
+              + Rs.100.00
             </button>
             <button
               onClick={() => handleAddMoneyButton("150.00")}
               className='bg-white border border-header text-header px-4 py-2 rounded-md hover:bg-header hover:text-white transition-transform transform hover:scale-105 mb-2'
             >
-              + $150.00
+              + Rs.150.00
             </button>
           </div>
         </div>
@@ -288,7 +288,7 @@ export const AccountCard = () => {
             onClick={handleAddMoney}
             className='bg-header text-white'
           >
-            Add ${amount}
+            Add Rs. {amount}
           </Button>
         </Modal.Footer>
       </Modal>

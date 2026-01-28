@@ -32,7 +32,7 @@ const TransactionHistory: React.FC = () => {
   ]);
 
   useEffect(() => {
-    axios.get("https://park-flex-api.onrender.com/api/transaction/get-transactions", {
+    axios.get("http://localhost:3001/api/transaction/get-transactions", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

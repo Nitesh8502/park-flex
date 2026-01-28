@@ -43,7 +43,7 @@ const ManageBookings: React.FC = () => {
   const deleteBooking = async (bookingId: string) => {
     try {
       const response = await axios.delete(
-        `https://park-flex-api.onrender.com/api/manage-bookings/bookings/${bookingId}`,
+        `http://localhost:3001/api/manage-bookings/bookings/${bookingId}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -68,7 +68,7 @@ const ManageBookings: React.FC = () => {
       try {
         // Fetching bookings from the API.
         const response = await axios.get(
-          `https://park-flex-api.onrender.com/api/manage-bookings/bookings/user/${user_id}`
+          `http://localhost:3001/api/manage-bookings/bookings/user/${user_id}`
         );
 
         let bookings: Booking[] = response.data;
@@ -77,7 +77,7 @@ const ManageBookings: React.FC = () => {
         const listingsWithNames = await Promise.all(
           bookings.map(async (booking) => {
             const listingResponse = await axios.post(
-              "https://park-flex-api.onrender.com/api/manage-listings/get",
+              "http://localhost:3001/api/manage-listings/get",
               { listingId: booking.listingId },
               {
                 headers: {

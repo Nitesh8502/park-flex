@@ -65,7 +65,7 @@ const ConfirmBooking: React.FC = () => {
     try {
       // API call to check user's wallet balance before proceeding with booking
       const balanceResponse = await axios.get(
-        "https://park-flex-api.onrender.com/api/wallet/get-balance",
+        "http://localhost:3001/api/wallet/get-balance",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -89,8 +89,8 @@ const ConfirmBooking: React.FC = () => {
       // Findout the API URL and method based on whether booking is new or an edit
       // IF bookingId exists then update url else post url
       const url = booking._id
-        ? `https://park-flex-api.onrender.com/api/manage-bookings/bookings/${booking._id}`
-        : "https://park-flex-api.onrender.com/api/manage-bookings/add-booking";
+        ? `http://localhost:3001/api/manage-bookings/bookings/${booking._id}`
+        : "http://localhost:3001/api/manage-bookings/add-booking";
       const method = booking._id ? "PUT" : "POST";
 
       try {

@@ -71,7 +71,7 @@ const ViewDetails = () => {
 
         // Using axios for fetching listing details
         const response = await axios.post(
-          "https://park-flex-api.onrender.com/api/manage-listings/get",
+          "http://localhost:3001/api/manage-listings/get",
           { listingId: booking.listingId },
           {
             headers: {
@@ -87,7 +87,7 @@ const ViewDetails = () => {
 
         // Using axios for fetching owner details
         const ownerResponse = await axios.get(
-          `https://park-flex-api.onrender.com/api/auth/getuser/${ownerId}`,
+          `http://localhost:3001/api/auth/getuser/${ownerId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

@@ -105,7 +105,7 @@ function Home() {
               <p className='m-0 p-0 truncate w-full'>{parkingSpot.name}</p>
               <p className='m-0 p-0'>Type: {parkingSpot.parkingType}</p>
             </div>
-            <p className='m-0 p-0'>Daily: $ {parkingSpot.dailyRate}</p>
+            <p className='m-0 p-0'>Daily: Rs. {parkingSpot.dailyRate}</p>
           </div>
         </div>
       </Link>

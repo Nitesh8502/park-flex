@@ -291,7 +291,7 @@ export const SpotDetails = () => {
                 <div className='flex flex-col h-full md:ml-4 z-10 shadow-lg bg-backgroundColor rounded-md'>
                   <div className='flex flex-col flex-1 px-4 pt-4 pb-3 w-full'>
                     <h4 className='text-textPrimary text-lg font-semibold'>
-                      ${parkingSpotDetails.parkingSpot.dailyRate}/day
+                      Rs. {parkingSpotDetails.parkingSpot.dailyRate}/day
                     </h4>
                     <div className='flex flex-row w-full mt-2'>
                       <div className='flex flex-col flex-1 pr-6'>
@@ -336,7 +336,7 @@ export const SpotDetails = () => {
                   </div>
                   <div className='flex flex-row w-full px-4 py-2 justify-between'>
                     <h5 className='text-textPrimary'>
-                      Sub total : ${parkingSpotDetails.parkingSpot.dailyRate} *{" "}
+                      Sub total : Rs.{parkingSpotDetails.parkingSpot.dailyRate} *{" "}
                       {dayjs(endDate).isSame(dayjs(startDate), "day")
                         ? 1
                         : dayjs(endDate).diff(dayjs(startDate), "day") < 0
@@ -344,7 +344,7 @@ export const SpotDetails = () => {
                         : dayjs(endDate).diff(dayjs(startDate), "day") + 1}
                     </h5>
                     <h5 className='text-textPrimary'>
-                      ${" "}
+                      Rs.{" "}
                       {formatToTwoPrecisionFloat(
                         parkingSpotDetails.parkingSpot.dailyRate *
                           (dayjs(endDate).isSame(dayjs(startDate), "day")
@@ -361,7 +361,7 @@ export const SpotDetails = () => {
                       Total
                     </h3>
                     <h3 className='text-textPrimary text-2xl font-bold'>
-                      ${" "}
+                      Rs.{" "}
                       {formatToTwoPrecisionFloat(
                         parkingSpotDetails.parkingSpot.dailyRate *
                           (dayjs(endDate).isSame(dayjs(startDate), "day")
